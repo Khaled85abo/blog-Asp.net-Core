@@ -32,6 +32,7 @@ namespace blog.Controllers
         
 
         [HttpGet("/image/{image}")]
+        [ResponseCache(CacheProfileName = "Monthly")]
         public IActionResult Iamge(string image) => 
             new FileStreamResult(_fileManager.ImageStream(image), $"image/{image.Substring(image.LastIndexOf('.') + 1)}");
         
