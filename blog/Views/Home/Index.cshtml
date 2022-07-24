@@ -1,12 +1,18 @@
 ﻿@model IEnumerable<Post>
 
-    @{}
+@{
+    ViewBag.Title = "Bloggy";
+    ViewBag.Description = "Best Bloggy to ever exist";
+    ViewBag.Keywords = "blog, travel, happines, covid"; 
+}
 
-<h2>Home page</h2>
-<img src="~/content/static/dog.jpg" width="400" />
+<div class="main-img" >
+    <span class="title" >My first blog with .Net</span>
+</div>
 
-<div>
-    <ul>
+<div class="container">
+   @*
+       <ul>
         @foreach(var post in Model)
         {
             <li>
@@ -14,4 +20,21 @@
             </li>
         }
     </ul>
+    *@
+      @foreach(var post in Model)
+        {
+        var image_path = $"/Image/{post.Image}";
+
+        <a class="post" asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
+            @if (!String.IsNullOrEmpty(post.Image))
+            {
+                 <img src="@image_path" width="300"/>
+            }
+           
+           <span class="title">
+                @post.Title
+           </span>
+        </a>
+
+        }
 </div>
