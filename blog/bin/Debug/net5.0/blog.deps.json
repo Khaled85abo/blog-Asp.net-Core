@@ -39,6 +39,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.2",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
+          "PhotoSauce.MagicScaler": "0.13.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -1203,6 +1204,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "PhotoSauce.MagicScaler/0.13.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/PhotoSauce.MagicScaler.dll": {
+            "assemblyVersion": "0.13.0.0",
+            "fileVersion": "0.13.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/PhotoSauce.MagicScaler.dll": {}
         }
       },
       "runtime.native.System/4.3.0": {
@@ -3999,6 +4011,13 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "PhotoSauce.MagicScaler/0.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vdR/di34Yl/Uml8pria7/EBCn894m905/VYByQ9OMYaQXILksZfcjWplEdGQkvKzeVv+9YPy3Dg9+2FGgT5h5g==",
+      "path": "photosauce.magicscaler/0.13.0",
+      "hashPath": "photosauce.magicscaler.0.13.0.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

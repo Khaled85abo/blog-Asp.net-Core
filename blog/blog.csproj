@@ -21,11 +21,19 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="PhotoSauce.MagicScaler" Version="0.13.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\content\blog\" />
   </ItemGroup>
+
+	<ItemGroup>
+		<None Remove="wwwroot/content/blog/*.*" />
+		<None Remove="wwwroot/lib/**/*.*" />
+		<None Include="wwwroot/lib/**/dist/**/*.*" />
+		
+	</ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\lib\Trumbowyg-main\.bowerrc" />

@@ -156,3 +156,4 @@ D:\.Net\blog-commented\blog\blog\obj\Debug\net5.0\staticwebassets\blog.StaticWeb
 D:\.Net\blog-commented\blog\blog\obj\Debug\net5.0\Razor\Views\Auth\Login.cshtml.g.cs
 D:\.Net\blog-commented\blog\blog\obj\Debug\net5.0\Razor\Views\Panel\Index.cshtml.g.cs
 D:\.Net\blog-commented\blog\blog\obj\Debug\net5.0\Razor\Views\Panel\Edit.cshtml.g.cs
+D:\.Net\blog-commented\blog\blog\bin\Debug\net5.0\PhotoSauce.MagicScaler.dll

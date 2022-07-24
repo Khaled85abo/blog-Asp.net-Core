@@ -3,12 +3,15 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using PhotoSauce.MagicScaler;
 
 namespace blog.Data.FileManager
 {
     public class FileManager : IFileManager
     {
         private string _imagePath;
+        private Stream fileStream;
+
         public FileManager(IConfiguration config)
         {
             _imagePath = config["Path:Images"]; 
@@ -17,6 +20,27 @@ namespace blog.Data.FileManager
         public FileStream ImageStream(string image)
         {
             return new FileStream(Path.Combine(_imagePath, image), FileMode.Open, FileAccess.Read);
+        }
+
+        public bool RemoveImage(string image)
+        {
+            try
+            {
+                var file = Path.Combine(_imagePath, image);
+                if (File.Exists(file))
+                {
+                    File.Delete(file);
+                    return true;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+
+            }
+            return false;
+          
         }
 
         public async  Task<string> SaveImage(IFormFile image)
@@ -38,7 +62,11 @@ namespace blog.Data.FileManager
 
                 using (var fileStream = new FileStream(Path.Combine(save_path, fileName), FileMode.Create))
                 {
-                   await image.CopyToAsync(fileStream);
+                   // Saving image as it is without resizing
+                  //  await image.CopyToAsync(fileStream);
+                  // Resizing image before saving
+                  MagicImageProcessor.ProcessImage(image.OpenReadStream(), fileStream, ImageOptions());
+
                 }
                 return fileName;
             }
@@ -48,5 +76,16 @@ namespace blog.Data.FileManager
                 return "Error";
             }
         }
+
+        private ProcessImageSettings ImageOptions() => new ProcessImageSettings
+        {
+            Width = 800,
+            Height = 500,
+            ResizeMode = CropScaleMode.Crop
+            //SaveFormat = ImageMimeTypes.Jpeg,
+            //JpegQuality = 100,
+            //JpegSubsampleMode = ChromaSubsampleMode.Subsample420,
+
+        };
     }
 }

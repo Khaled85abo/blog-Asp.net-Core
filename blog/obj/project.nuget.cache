@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2qt3ZHNsooC/YqDrdHNS0Y/BGBSAIVXZ60U20r56Wled1Z9DlcwcXEy+lQN5eL+K4Jz7B5iqGSoXnNRomfvLxA==",
+  "dgSpecHash": "z5+K0xyZcbi4SMBFjZtxBTc+5c3oNvp+TH42M9mBjUxZWBlOpYQD+ZLjEFM/zm2pPtSKDxc7TYquFCU+LsLQ6g==",
   "success": true,
   "projectFilePath": "D:\\.Net\\blog-commented\\blog\\blog\\blog.csproj",
   "expectedPackageFiles": [
@@ -63,6 +63,7 @@
     "C:\\Users\\khale\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\khale\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\khale\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\khale\\.nuget\\packages\\photosauce.magicscaler\\0.13.0\\photosauce.magicscaler.0.13.0.nupkg.sha512",
     "C:\\Users\\khale\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\khale\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\khale\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",

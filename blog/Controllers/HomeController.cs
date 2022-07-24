@@ -16,25 +16,25 @@ namespace blog.Controllers
             _repo = repo;
             _fileManager = fileManager;
         }
-        public IActionResult Index(string category)
+       /* public IActionResult Index(string category)
         {
             var posts = string.IsNullOrEmpty(category) ? _repo.GetAllPosts() : _repo.GetAllPosts(category);
             return View(posts);
         }
+       */
 
-        public IActionResult Post(int id)
-        {
-            var post = _repo.GetPost(id);
+        public IActionResult Index(string category) => 
+            View(string.IsNullOrEmpty(category) ? _repo.GetAllPosts() : _repo.GetAllPosts(category));
+        
 
-            return View(post);
-        }
+        public IActionResult Post(int id) => 
+            View(_repo.GetPost(id));
+        
 
         [HttpGet("/image/{image}")]
-        public IActionResult Iamge(string image)
-        {
-            var mime = image.Substring(image.LastIndexOf('.') + 1);
-            return new FileStreamResult(_fileManager.ImageStream(image), $"image/{mime}");
-        }
+        public IActionResult Iamge(string image) => 
+            new FileStreamResult(_fileManager.ImageStream(image), $"image/{image.Substring(image.LastIndexOf('.') + 1)}");
+        
 
 
 

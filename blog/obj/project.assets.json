@@ -985,6 +985,15 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "PhotoSauce.MagicScaler/0.13.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/PhotoSauce.MagicScaler.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/PhotoSauce.MagicScaler.dll": {}
+        }
+      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -3883,6 +3892,33 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "PhotoSauce.MagicScaler/0.13.0": {
+      "sha512": "vdR/di34Yl/Uml8pria7/EBCn894m905/VYByQ9OMYaQXILksZfcjWplEdGQkvKzeVv+9YPy3Dg9+2FGgT5h5g==",
+      "type": "package",
+      "path": "photosauce.magicscaler/0.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PhotoSauce.png",
+        "lib/net461/PhotoSauce.MagicScaler.dll",
+        "lib/net461/PhotoSauce.MagicScaler.xml",
+        "lib/net472/PhotoSauce.MagicScaler.dll",
+        "lib/net472/PhotoSauce.MagicScaler.xml",
+        "lib/net6.0/PhotoSauce.MagicScaler.dll",
+        "lib/net6.0/PhotoSauce.MagicScaler.xml",
+        "lib/netcoreapp3.1/PhotoSauce.MagicScaler.dll",
+        "lib/netcoreapp3.1/PhotoSauce.MagicScaler.xml",
+        "lib/netstandard2.0/PhotoSauce.MagicScaler.dll",
+        "lib/netstandard2.0/PhotoSauce.MagicScaler.xml",
+        "lib/netstandard2.1/PhotoSauce.MagicScaler.dll",
+        "lib/netstandard2.1/PhotoSauce.MagicScaler.xml",
+        "license",
+        "photosauce.magicscaler.0.13.0.nupkg.sha512",
+        "photosauce.magicscaler.nuspec",
+        "readme.md",
+        "third-party-notices"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -7489,7 +7525,8 @@
       "Microsoft.AspNetCore.Identity.UI >= 5.0.15",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.2",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "PhotoSauce.MagicScaler >= 0.13.0"
     ]
   },
   "packageFolders": {
@@ -7556,6 +7593,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[5.0.2, )"
+          },
+          "PhotoSauce.MagicScaler": {
+            "target": "Package",
+            "version": "[0.13.0, )"
           }
         },
         "imports": [
