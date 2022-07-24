@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using blog.Data.Repository;
+using blog.Data.FileManager;
 using System.Threading.Tasks;
 using blog.Models;
+using blog.ViewModels;
 
 namespace blog.Controllers
 {
@@ -11,10 +13,11 @@ namespace blog.Controllers
     {
 
         private IRepository _repo;
-
-        public PanelController(IRepository repo)
+        private IFileManager _fileManager;
+        public PanelController(IRepository repo, IFileManager fileManager)
         {
             _repo = repo;
+            _fileManager = fileManager;
         }
         public IActionResult Index()
         {
@@ -33,15 +36,28 @@ namespace blog.Controllers
             {
                 // C# sintax to convert a variable to integer (casting)
                 var post = _repo.GetPost((int)id);
-                return View(post);
+                return View( new PostViewModel
+                {
+                    Title = post.Title,
+                    Id = post.Id,
+                    Body = post.Body
+                } );
             }
 
 
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Post post)
+        public async Task<IActionResult> Edit(PostViewModel vm)
         {
+            var post = new Post
+            {
+                Id = vm.Id,
+                Title = vm.Title,
+                Body = vm.Body,
+                Image = await _fileManager.SaveImage(vm.Image)
+            };
+
             if (post.Id > 0)
                 _repo.UpdatePost(post);
             else

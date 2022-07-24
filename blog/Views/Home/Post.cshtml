@@ -3,4 +3,9 @@
 
 <h2>Single Post</h2>
 <h4>@Model.Title</h4>
+@if(!String.IsNullOrEmpty(Model.Image))
+{
+    var image_path = $"/Image/{Model.Image}";
+    <img src="@image_path" width="200" />
+}
 <p>@Model.Body</p>

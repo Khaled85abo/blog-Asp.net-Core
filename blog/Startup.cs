@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using blog.Data;
 using Microsoft.Extensions.Configuration;
 using blog.Data.Repository;
+using blog.Data.FileManager;
 
 namespace blog
 {
@@ -45,6 +46,8 @@ namespace blog
             {
                 options.LoginPath = "/Auth/Login";
             });
+
+           
             /*
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<AppDbContext>();
@@ -53,6 +56,7 @@ namespace blog
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddTransient<IRepository, Repository>();
+            services.AddTransient<IFileManager, FileManager>();
             services.AddMvc();
         }
 
@@ -66,6 +70,9 @@ namespace blog
 
             app.UseRouting();
             // app.UseMvcWithDefaultRoute();
+
+            app.UseStaticFiles();
+
             app.UseAuthentication();
             app.UseAuthorization();
 
