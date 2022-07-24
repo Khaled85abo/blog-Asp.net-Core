@@ -19,8 +19,15 @@ using blog.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "D:\.Net\blog-commented\blog\blog\Views\_ViewImports.cshtml"
+using blog.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7548620cfe440816da6c01a0c1a47fbfbb8dabb0", @"/Views/Home/Post.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8515d86377b2c1b7c46050903778270fde82521", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b78227f28763251ed79f8c195004d8b7036b6857", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_Post : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Post>
     #nullable disable

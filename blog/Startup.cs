@@ -1,16 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using System;
 using blog.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using blog.Data.Repository;
 
@@ -33,14 +27,31 @@ namespace blog
             services.AddDbContext<AppDbContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<AppDbContext>();
-            services.AddDatabaseDeveloperPageExceptionFilter();
 
+            
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredLength = 6;
+
+            })
+                //.AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+
+            services.ConfigureApplicationCookie( options =>
+            {
+                options.LoginPath = "/Auth/Login";
+            });
+            /*
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<AppDbContext>();
-            
+            */
+           
+            services.AddDatabaseDeveloperPageExceptionFilter();
+
             services.AddTransient<IRepository, Repository>();
             services.AddMvc();
         }
@@ -56,6 +67,7 @@ namespace blog
             app.UseRouting();
             // app.UseMvcWithDefaultRoute();
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
