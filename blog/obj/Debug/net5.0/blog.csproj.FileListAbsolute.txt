@@ -158,3 +158,4 @@ D:\.Net\blog-commented\blog\blog\obj\Debug\net5.0\Razor\Views\Panel\Index.cshtml
 D:\.Net\blog-commented\blog\blog\obj\Debug\net5.0\Razor\Views\Panel\Edit.cshtml.g.cs
 D:\.Net\blog-commented\blog\blog\bin\Debug\net5.0\PhotoSauce.MagicScaler.dll
 D:\.Net\blog-commented\blog\blog\bin\Debug\net5.0\bundleconfig.json
+D:\.Net\blog-commented\blog\blog\obj\Debug\net5.0\Razor\Views\Home\_MainComment.cshtml.g.cs

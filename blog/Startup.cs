@@ -8,6 +8,7 @@ using blog.Data;
 using Microsoft.Extensions.Configuration;
 using blog.Data.Repository;
 using blog.Data.FileManager;
+using Microsoft.AspNetCore.Mvc;
 
 namespace blog
 {
@@ -59,7 +60,7 @@ namespace blog
             services.AddTransient<IFileManager, FileManager>();
             services.AddMvc(options =>
             {
-                options.CacheProfiles.Add("Monthly", new Microsoft.AspNetCore.Mvc.CacheProfile { Duration = 60 * 60 * 24 * 7 * 4 });
+                options.CacheProfiles.Add("Monthly", new CacheProfile { Duration = 60 * 60 * 24 * 7 * 4 });
             });
         }
 
